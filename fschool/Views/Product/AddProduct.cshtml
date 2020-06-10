@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+@model IEnumerable<fschool.Models.ProductModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddProduct</title>
+</head>
+<body>
+    <script>
+        function fun() {
+            alert("invoked by button");
+
+        }
+    </script>
+    <div style="text-align:center">
+        <h1>Add product</h1>
+    </div>
+    <div style="text-align:center">
+        <form action="submit" method="post">
+            Product Code:-<input type="number" name="ProductCode" value="" /><br><br>
+            Product Name:-<input type="text" name="ProductName" value="" /><br><br>
+            Product Information:-<input type="text" name="Productinfo" value="" /><br><br>
+            <input id="Button1" type="submit" name="button" />
+        </form>
+    </div>
+    <br>
+    
+    <table border="3">
+        <tr>
+            <td>Product code</td>
+            <td>Product Name</td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductCode</td>
+                <td> @item.ProductName</td>
+                <td>@item.Productinfo</td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>
